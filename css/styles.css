@@ -1,5 +1,6 @@
 
-/* variables */
+ /* -- variables ------------------------------ */
+        
 :root {
     --color-main: rgba(116, 116, 233, 0.97);
     --color-second: rgba(69, 69, 129, 0.97);
@@ -19,6 +20,15 @@
     font-weight: 300;
     margin: 0;
     padding: 0;   
+  }
+
+  /* -- Grid Container ------------------------------ */
+.grid-container{
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
   }
     
 header{
@@ -220,8 +230,9 @@ textarea:focus,
     border-radius: 5px;
     cursor: pointer;
 }
-.send-button:hover {
-    background-color: #357ebd;
+.send-button:hover,
+.save-button:hover {
+    background-color: #b66b15;
     border:var(--color-borderLine) 2px solid;
 }
 select{

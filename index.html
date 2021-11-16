@@ -90,15 +90,15 @@
                 <div class="traffic-header">
                     <h2 class="traffic-headline">TRAFFIC</h2>
                     <ul class="traffic-nav">
-                        <li class="traffic-nav-link">Hourly</li>
-                        <li class="traffic-nav-link">Daily</li>
-                        <li class="traffic-nav-link active">Weekly</li>
-                        <li class="traffic-nav-link">Monthly</li>
+                        <li id="hourlyData" class="traffic-nav-link">Hourly</li>
+                        <li id="dailyData" class="traffic-nav-link">Daily</li>
+                        <li id="weeklyData" class="traffic-nav-link">Weekly</li>
+                        <li id="monthlyData" class="traffic-nav-link">Monthly</li>
                     </ul>
                 </div>
-                <div class="widget-container-full">
+                <div id="traffic-div" class="widget-container-full">
                     <!-- element line graph wll attach here -->
-                    <canvas id="traffic-chart" width="600" height="300"></canvas>
+                    <canvas id="traffic-chart"></canvas>
                </div>
             </section>
 

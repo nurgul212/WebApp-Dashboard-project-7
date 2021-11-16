@@ -23,14 +23,44 @@ newMessage.addEventListener('click', e =>{
 
 // Traffic Chart
 const trafficCanvas = document.getElementById("traffic-chart");
-const trafficData = {
+let trafficData = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3","4-10", "11-17", "18-24", "25-31"],
     datasets: [{
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
         backgroundColor:'rgba(176,160,242,0.5)',
-        pointBackgroundColor: 'rgba(176,160,242,1)',
+        borderColor: 'purple',
+        pointBackgroundColor: 'orange',
+        pointHoverBackgroundColor: 'red',
         borderWidth: 1,
-        tension: 0.6,
+        tension: 0.5,
+    }]
+}
+
+let hourlyData = {
+    labels: ["7-8am", "9-10am", "11-12am", "1-2pm", "3-4pm", "5-6pm", "7-8pm","9-10pm", "11-12pm"],
+    datasets: [{
+        data: [150, 185, 140, 200, 150, 175, 125, 35, 50],
+    }]
+}
+
+let dailyData1 = {
+    labels: ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"],
+    datasets: [{
+        data: [2500, 1350, 1400, 1200, 2500, 1750, 2450],
+    }]
+}
+
+let weeklyData = {
+    labels: ["W1", "W2", "W3", "W4", "W5", "W6", "W7","W8", "W9", "W10"],
+    datasets: [{
+        data: [1200, 2500, 1750, 2500, 1350, 1400, 2450,1750, 1500, 1050],
+    }]
+}
+
+let monthlyData = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"],
+    datasets: [{
+        data: [2200, 1500, 3750, 2500, 3350, 3400, 4450,  3349, 4845, 3160, 1850, 1950],
     }]
 }
 
@@ -58,6 +88,47 @@ let trafficChart = new Chart(trafficCanvas, {
     data: trafficData,
     options: trafficOptions
 });
+
+// Display hourly, daily, weekly, monthly data chart by clicking the traffic navigation 
+
+const updateChart = (chart, newData) => {
+    chart.data.labels = newData.labels;
+    chart.data.datasets[0].data = newData.datasets[0].data;
+    chart.update();
+};
+
+
+const trafficNavigation = document.querySelector('.traffic-nav');
+trafficNavigation.addEventListener('click', (e) => {
+     let targetNav = e.target;
+    if (targetNav.tagName === 'LI') {
+        targetNav.className = "active";
+    }
+    const trafficList = document.querySelectorAll('.traffic-nav li');
+    for (let i = 0; i < trafficList.length; i++) {
+        const activeList = trafficList[i];
+        if (activeList.className === 'active') {
+            activeList.className += ' traffic-active';
+            let listName = activeList.textContent;
+        if (listName === 'Hourly') {
+            updateChart(trafficChart, hourlyData);
+        }
+        else if (listName === 'Daily') {
+            updateChart(trafficChart, dailyData1);
+        }
+        else if (listName === 'Weekly') {
+            updateChart(trafficChart, weeklyData);
+        }
+        else if (listName === 'Monthly') {
+            updateChart(trafficChart, monthlyData);
+        }
+        } else {
+            activeList.className = 'traffic-nav-link';
+        }
+    }
+});
+
+
 
 
 

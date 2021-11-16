@@ -237,7 +237,17 @@ header h3{
 .traffic-nav{
     margin: 15px 10px ;
 }
-
+.traffic li{
+    cursor: pointer;
+}
+.traffic-active{
+  background-color: var(--color-main); 
+  border-radius: 20px; 
+  width: 80px;
+  text-align: center;
+  padding: 6px;
+  color: white;
+}
  .social-container {
     background-color: var(--color-space);
     border: var(--color-border) 2px solid;

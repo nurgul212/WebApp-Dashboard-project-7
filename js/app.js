@@ -34,10 +34,43 @@ const trafficData = {
 
 
 
+// -------------------------------Dara for daily traffic bar chart---------------------
+const dailyCanvas = document.getElementById("dailyTraffic-chart");
+const dailyData = {
+    labels: ["S", "M", "T", "W", "Th", "F", "S"],
+    datasets: [{
+        label: '#of Hits',
+        data: [75, 115, 175, 125, 225, 200, 100],
+        backgroundColor: '#21c2aa',
+        borderWidth: 1
+    }]
+};
+
+const dailyOptions = {
+    scales: {
+        y:{
+            beginAtZero: true
+        }
+    },
+    plugins: {
+        legend: {
+            display: false
+        }
+    }
+};
+
+let dailyChart = new Chart(dailyCanvas, {
+    type: 'bar',
+    data: dailyData,
+    options: dailyOptions
+});
 
 
-// Doughnut chart
-const mobileCanvas = document.getElementById("mobile-chart");
+
+
+
+// ---------------------------------Doughnut chart---------------------
+const mobileCanvas = document.getElementById("mobileUsers-chart");
 const mobileData = {
     labels: ["Desktop", "Tablet", "Phones"],
     datasets: [{
@@ -45,9 +78,9 @@ const mobileData = {
         data: [2000, 550, 500],
         borderWidth: 0,
         backgroundColor: [
-            '#7477BF',
-            '#78CF82',
-            '#51B6C8'
+            '#c74436',
+            'orange',
+            '#21c2aa'
         ]
     }]
 };

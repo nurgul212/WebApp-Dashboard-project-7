@@ -221,10 +221,23 @@ header h3{
      max-width: 100%;
  } */
 
+
+ #trafficChart,
  #mobileUsers-chart,
  #dailyTraffic-chart{
      padding: 16px;
  }
+
+.traffic,
+.daily-traffic,
+ .mobile-users,
+ .social-stats{
+    border-bottom:var(--color-border) 2px solid; 
+}
+.traffic-nav{
+    margin: 15px 10px ;
+}
+
  .social-container {
     background-color: var(--color-space);
     border: var(--color-border) 2px solid;
@@ -263,6 +276,7 @@ header h3{
 .text{
     margin-left: 20px;
 }
+
 .social-stat{
     font-size:var(--font-size-large);
     color: gray;

@@ -24,11 +24,29 @@
   /* -- Grid Container ------------------------------ */
 .grid-container{
     display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows:auto;
     grid-template-areas:
-        "header"
-        "nav"
-        "main"
+                 "header"
+                 "navigation"
+                 "main"
   }
+
+header{
+    grid-area: header;
+}
+
+nav{
+    grid-area: navigation;
+}
+
+main{
+    grid-area: main;
+    display: grid;
+    padding-left: 1rem;
+    width: 100%;
+}
+
     
 header{
     background-color:var(--color-main);
@@ -41,6 +59,7 @@ header span{
     font-size:var(--font-size-medium);
     font-weight:30 ;
 }
+
 .logo{
   flex-grow: 1; 
   font-size:var(--font-size-medium);
@@ -88,8 +107,8 @@ header span{
 }
 
 svg{
-    width: 50px;
-    height: 50px;
+    width: 40px; 
+    height: 40px;
     fill: var(--color-fill);
 }
 
@@ -428,10 +447,31 @@ select{
 }
 
 
-
 /* Media Queries */
 
+@media screen and (min-width: 768px){
+    .grid-container{
+        grid-template-columns: 55px 1fr;
+        grid-template-rows:auto;
+        grid-template-areas:
+                     "header header"
+                     "navigation main"
+                     
+    }
+    main{
+        grid-template-columns: 50%;
+    }
 
+    nav{
+        justify-content: flex-start;
+        height: auto;
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+
+     
+}
 
   
   

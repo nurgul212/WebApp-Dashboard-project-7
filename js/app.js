@@ -221,7 +221,6 @@ send.addEventListener("click", (e) => {
 });
 
 
-
 // -----Save and Cancel Button function
 const settings = document.getElementById("settings-form");
 const myStorage = window.localStorage;

@@ -11,7 +11,8 @@ alertBanner.addEventListener('click', e => {
     }
 });
 
-// Closing new messages
+
+// ----------------------Closing new messages-----------------------------
 const newMessage = document.getElementById("notificationList");
 newMessage.addEventListener('click', e =>{
     const message = e.target;
@@ -21,7 +22,7 @@ newMessage.addEventListener('click', e =>{
 
 });
 
-// Traffic Chart
+// ----------------------Traffic Chart-------------------------------------------
 const trafficCanvas = document.getElementById("traffic-chart");
 let trafficData = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3","4-10", "11-17", "18-24", "25-31"],
@@ -30,7 +31,6 @@ let trafficData = {
         backgroundColor:'rgba(176,160,242,0.5)',
         borderColor: 'purple',
         pointBackgroundColor: 'orange',
-        pointHoverBackgroundColor: 'red',
         borderWidth: 1,
         tension: 0.5,
     }]
@@ -128,13 +128,6 @@ trafficNavigation.addEventListener('click', (e) => {
     }
 });
 
-
-
-
-
-
-
-
 // -------------------------------Dara for daily traffic bar chart---------------------
 const dailyCanvas = document.getElementById("dailyTraffic-chart");
 const dailyData = {
@@ -165,7 +158,6 @@ let dailyChart = new Chart(dailyCanvas, {
     data: dailyData,
     options: dailyOptions
 });
-
 
 
 // ---------------------------------Doughnut chart---------------------
@@ -201,4 +193,50 @@ let mobileChart = new Chart(mobileCanvas, {
     type: 'doughnut',
     data: mobileData,
     options: mobileOptions
+});
+
+
+// --------Messaging Section-------------------------------------------------------
+const user = document.getElementById("userField");
+const message = document.getElementById("messageField");
+const send = document.getElementById("send");
+
+send.addEventListener("click", (e) => {
+  if (user.value === "" && message.value === "") {
+    alert("Please fill out user and message fields before sending!");
+    e.preventDefault();
+    
+  } else if (user.value === "" ) {
+    alert("Please fill out user field before sending!  ");
+    e.preventDefault();
+    
+  } else if (message.value === "" ) {
+    alert("Please fill out message field before sending! ");
+    e.preventDefault();
+    
+  } else {
+    alert(`Awesome! Message successfully sent to ${user.value}!`);
+  }
+ 
+});
+
+
+
+// -----Save and Cancel Button function
+const settings = document.getElementById("settings-form");
+const myStorage = window.localStorage;
+
+settings.addEventListener("submit", (e) =>{
+    e.preventDefault();
+    const eNotification = document.querySelector("#emailNotification");
+    const setPublicProfile = document.querySelector("#publicProf");
+    const timeZone = document.getElementById("timezone");
+    myStorage.setItem("emailNotification", eNotification.checked);
+    myStorage.setItem("publicProf", setPublicProfile.checked);
+    myStorage.setItem("timezone", timeZone.value);
+    alert("Your settings are saved!");
+});
+
+settings.addEventListener("reset", (e) =>{
+    alert("Your settings are cancelled!");
 });

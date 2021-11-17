@@ -393,6 +393,7 @@ select{
     border-radius: 5px;
     height: 55px;
     margin:16px;
+    width: 90%;
 }
 .settings{
     display: flex;
@@ -421,7 +422,10 @@ select{
 .cancel-button{
     background-color: gray;
 }
-
+.cancel-button:hover {
+    background-color: rgb(47, 47, 48);
+    border: rgb(9, 207, 221) 2px solid;
+}
 
 
 

@@ -249,9 +249,9 @@
             <section class="message">
                 <h3 class="message-headline">MESSAGE USER</h3>
                 <form class="message-container">
-                    <input type="text" placeholder="Search for user" class="form-field" id="userId">
+                    <input type="text" placeholder="Search for user" class="form-field" id="userField">
                     <textarea placeholder="Message for user" class="form-area" id="messageField"></textarea>
-                    <button class="send-button" id="send"> SEND</button>
+                    <button class="send-button" id="send">SEND</button>
                 </form>
             </section>
 
@@ -262,54 +262,50 @@
                 <!--  custom CSS toggle switch :  https://ghinda.net/css-toggle-switch/index.html-->
 
                <!-- Send Email Notification ON/OFF Switch -->
-                 <div class="switch-container">
-                    <p>Send Email Notifications</p>
-                    <label class="switch-light switch-ios" onclick="">
-                        <input type="checkbox">                       
-                        <span>
-                            <span>OFF</span>
-                            <span>ON</span>
-                            <a></a>
-                        </span>
-                    </label>
-                </div> 
+                <form id="settings-form" action=""> 
+                    <div class="switch-container">
+                        <p>Send Email Notifications</p>
+                        <label class="switch-light switch-ios" onclick="">
+                            <input type="checkbox" id="emailNotification">                       
+                            <span>
+                                <span>OFF</span>
+                                <span>ON</span>
+                                <a></a>
+                            </span>
+                        </label>
+                    </div> 
 
                 <!-- Set Profile to Public ON/OFF Switch -->
-                 <div class="switch-container">  
-                    <p>Set Profile to Public</p>                 
-                    <label class="switch-light switch-ios" onclick="" id="space">
-                        <input type="checkbox">                   
-                        <span>
-                            <span>OFF</span>
-                            <span>ON</span>
-                            <a></a>
-                        </span>
-                     </label>
-                 </div> 
+                    <div class="switch-container">  
+                        <p>Set Profile to Public</p>                 
+                        <label class="switch-light switch-ios" onclick="" id="space">
+                            <input type="checkbox" id="publicProf">                   
+                            <span>
+                                <span>OFF</span>
+                                <span>ON</span>
+                                <a></a>
+                            </span>
+                        </label>
+                    </div> 
 
-                <select class="timezone-form" id="timezone">
-                        <option value="" disabled="disabled" selected="selected" class="select-timezone">Select a Timezone</option> 
+                   <select class="timezone-form" id="timezone">
+                        <option value="" disabled="disabled" selected="selected" class="select-timezone">Select Timezone</option> 
                         <option value="+00:00">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
                         <option value="+01:00">(GMT +1:00) Brussels, Copenhagen, Madrid, Paris</option>
-                        <option value="+02:00">(GMT +2:00) Kaliningrad, South Africa</option>
-                        <option value="+03:00">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
                         <option value="-08:00">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
                         <option value="-07:00">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
                         <option value="-06:00">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
                         <option value="-05:00">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
-                        <option value="-04:50">(GMT -4:30) Caracas</option>
                         <option value="-04:00">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
                         <option value="-03:50">(GMT -3:30) Newfoundland</option>
-                        <option value="-03:00">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
-                        <option value="-02:00">(GMT -2:00) Mid-Atlantic</option>
-                        <option value="-01:00">(GMT -1:00) Azores, Cape Verde Islands</option>
-                        
+                        <option value="-03:00">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>                                      
                     </select> 
 
-                <div class="settings-button">
-                    <button class="save-button" id="save"> SAVE</button>
-                    <button class="cancel-button" id="cancel">CANCEL</button>
-                </div>
+                    <div class="settings-button">
+                        <button type="submit" class="save-button" id="save"> SAVE</button>
+                        <button type="reset" class="cancel-button" id="cancel">CANCEL</button>
+                    </div>
+                </form>
             </section> 
 
         </main>

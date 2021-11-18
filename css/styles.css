@@ -293,8 +293,10 @@ header h3{
     color:var(--color-main);
 }
 .text{
+     font-size: 24px; 
     margin-left: 20px;
 }
+
 
 .social-stat{
     font-size:var(--font-size-large);

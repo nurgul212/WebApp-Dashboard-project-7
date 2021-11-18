@@ -325,6 +325,12 @@ header h3{
 strong{
     font-weight: bold;
 }
+.arrow {
+    display: none;
+    color: var(--color-main);
+    font-size: 18px;
+
+}
 
 .message-container{
     display: flex;
@@ -374,6 +380,7 @@ textarea:focus,
 }
 
 .switch-container {
+    width: 40%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -483,7 +490,7 @@ select{
         align-items: center; 
      }  
     .traffic-nav {
-        justify-content: flex-end;
+        margin-left: auto;
     }
     .traffic-nav-link {
         margin: 0.5em;
@@ -533,6 +540,9 @@ select{
        margin-right: auto;
        
    }
+   .arrow {
+       display: inline;
+   }
 
     select {
         width: 95%;
@@ -558,8 +568,10 @@ select{
     .settings {
         grid-column: 2/3;
     }
-
-
+    
+    .switch-container {
+        padding: 20px 0;;
+    }
 
 
 }

@@ -380,7 +380,7 @@ textarea:focus,
 }
 
 .switch-container {
-    width: 40%;
+    width: 95%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -390,7 +390,7 @@ textarea:focus,
 }
 
 .switch-light {
-    width:80px;
+    width:85px;
 }
 
 #space {
@@ -399,7 +399,7 @@ textarea:focus,
  .switch-ios.switch-light input:checked ~ span a {
     border-color: rgb(16, 94, 97);
     background-color:orangered;
-    width:30px;
+    width: 30px;
     height: 30px;
   }
  
@@ -409,7 +409,7 @@ select{
     border-radius: 5px;
     height: 55px;
     margin:16px;
-    width: 90%;
+    width: 95%;
 }
 .settings{
     display: flex;
@@ -530,7 +530,7 @@ select{
 
    .member-container{
        display:flex;
-       width: 100%;
+       /* width: 100%; */
        padding: 15px 10px;
        align-items: center;
    }
@@ -543,6 +543,10 @@ select{
    .arrow {
        display: inline;
    }
+
+   .switch-container {
+    width: 50%;
+}
 
     select {
         width: 95%;
@@ -561,6 +565,7 @@ select{
     }
     .members, 
     .message{
+
         grid-column: 1/2;
         border-right:var(--color-border) 2px solid; 
     }
@@ -569,9 +574,9 @@ select{
         grid-column: 2/3;
     }
     
+
     .switch-container {
         padding: 20px 0;;
     }
-
 
 }

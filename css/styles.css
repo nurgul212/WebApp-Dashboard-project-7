@@ -211,7 +211,7 @@ header h3{
  .message-headline,
  .settings-headline{
     font-size:var(--font-size-medium);
-    padding:15px;
+    padding:10px;
  }
  .right-space{
     background-color: var(--color-space);
@@ -532,8 +532,8 @@ select{
 
    .member-container{
        display:flex;
-       /* width: 100%; */
-       padding: 15px 10px;
+       width: 100%; 
+       padding: 15px;
        align-items: center;
    }
    .member-text{
@@ -580,5 +580,6 @@ select{
     .switch-container {
         padding: 20px 0;;
     }
+   
 
 }

@@ -105,8 +105,8 @@ header span{
 }
 
 svg{
-    width: 35px; 
-    height: 35px;
+    width: 40px; 
+    height:40px;
     fill: var(--color-fill);
 }
 
@@ -125,15 +125,15 @@ svg{
  
 
   .notificationsList {
-    width:182px;
+    width:210px;
     display: none;
     margin-top: 15px;
     padding: 0px;
-    box-shadow: 0px 0px 3px black;
-    background-color: orange;
+    background-color: rgb(165, 231, 121);
     position: absolute;
     top: 45px;
     right: 145px;
+    border-radius: 5px;
   }
   
   .new-message {
@@ -141,11 +141,13 @@ svg{
     align-items: center;
     padding: 3px 5px;
     border-bottom:var(--color-border) 2px solid;
-    color: rgb(0, 0, 0);
-    font-size: 0.8rem;
+    color: red;
+    font-size: 0.9rem;
+    line-height: 20px;
   }
  .close-message {
      cursor: pointer;
+     margin-left: auto;
  }
 
 header h3{
@@ -321,8 +323,11 @@ header h3{
 }
 .members-box{
     display:flex;
+    flex-grow: 1;
+    flex-basis: 100%;
     flex-direction: column;
     text-align: center;
+    margin: 15px;
 }
 strong{
     font-weight: bold;
@@ -332,6 +337,15 @@ strong{
     color: var(--color-main);
     font-size: 18px;
 
+}
+.members div:last-child, 
+.members-activity div:last-child {
+    border: none;
+}
+
+.members,
+.members-activity {
+ border-bottom: var(--color-border) 2px solid;
 }
 
 .message-container{
@@ -346,6 +360,8 @@ strong{
     height: 55px;
     margin:16px;
     padding:10px;
+    width: 92%;
+
 
 }
 textarea {
@@ -366,6 +382,17 @@ textarea:focus,
     outline-color: var(--color-borderLine);
     transition: 0.1s;
 }
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: orange;
+    border-bottom: var(--color-main) 1px solid;
+    width: 300px;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
 .send-button {
     background-color: var(--color-main);
     color:var(--color-fill);
@@ -382,7 +409,7 @@ textarea:focus,
 }
 
 .switch-container {
-    width: 95%;
+    width: 92%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -450,7 +477,7 @@ select{
 
 @media screen and (min-width: 768px){
     .grid-container{
-        grid-template-columns: 55px 1fr;
+        grid-template-columns: 65px 1fr;
         grid-template-areas:
                      "header header"
                      "nav main"                     
@@ -460,7 +487,7 @@ select{
     }
 
     .notificationsList {
-        width:250px;
+        width:350px;
         display: none;
         margin-top: 25px;
         padding: 0px;
@@ -469,6 +496,7 @@ select{
     }
     .new-message {
         padding: 10px;
+        font-size: 1em;
     }
     .close-message{
         padding-left: 30px;
@@ -480,10 +508,13 @@ select{
         flex-direction: column;
     }
     
+
     .home-icon,
     .bar-chart, 
     .members-icon,
     .settings-icon {
+        width: 50px;
+        height: 50px;
         padding-top: 20px;
     }
    
@@ -495,15 +526,15 @@ select{
         margin-left: auto;
     }
     .traffic-nav-link {
-        margin: 0.5em;
+        margin: 8px;
     }
     .widget-container-full {
         width: 85vw;
-        margin: 1em;
+        margin: 16px;
     }
     .canvas-container {
         width: 40vw;
-        margin: 1em;
+        margin: 16px;
     }
     .traffic{
         display: grid;
@@ -538,12 +569,16 @@ select{
    }
    .member-text{
        text-align: left;
-       margin-left: 20px;
+       margin-left: 10px;
        margin-right: auto;
        
    }
    .arrow {
        display: inline;
+   }
+   .form-field {
+       width: 95%;
+
    }
 
    .switch-container {
@@ -567,19 +602,18 @@ select{
     }
     .members, 
     .message{
-
         grid-column: 1/2;
         border-right:var(--color-border) 2px solid; 
     }
+    
     .members-activity, 
     .settings {
         grid-column: 2/3;
+
     }
     
-
     .switch-container {
         padding: 20px 0;;
-    }
-   
+    }   
 
 }

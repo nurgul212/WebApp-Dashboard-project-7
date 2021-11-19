@@ -327,22 +327,52 @@ let friendsList = ["Victoria Chambers", "Dale Byrn", "Dawn Wood", "Dan Oliver"];
     autocomplete(document.getElementById("userField"), friendsList);
 
 
+// save and cancel button and local storage 
 
-// -----Save and Cancel Button function
-const settings = document.getElementById("settings-form");
-const myStorage = window.localStorage;
+const saveBtn = document.getElementById('save');
+const cancelBtn = document.getElementById('cancel');
+const checkbox = document.querySelectorAll('input[type="checkbox"');
+const select = document.querySelector('select');
 
-settings.addEventListener("submit", (e) =>{
-    e.preventDefault();
-    const eNotification = document.querySelector("#emailNotification");
-    const setPublicProfile = document.querySelector("#publicProf");
-    const timeZone = document.getElementById("timezone");
-    myStorage.setItem("emailNotification", eNotification.checked);
-    myStorage.setItem("publicProf", setPublicProfile.checked);
-    myStorage.setItem("timezone", timeZone.value);
-    alert("Your settings are saved!");
+
+const saveInfo = () =>{
+
+    for (let i = 0; i < checkbox.length; i++) {
+        localStorage.setItem(checkbox[i].value, checkbox[i].checked);
+    }
+    localStorage.setItem('timezone', select.value);
+
+}
+const loadInfo = () => {
+    for (let i = 0; i < checkbox.length; i++) {
+        checkbox[i].checked = localStorage.getItem(checkbox[i].value) === 'true';
+    }
+    if (localStorage.getItem('timezone')) {
+    select.value = localStorage.getItem('timezone');
+    }
+}
+const removeInfo = () => {
+    for (let i = 0; i < checkbox.length; i++) {
+        localStorage.setItem(checkbox[i].value, checkbox[i].checked=false);
+    }
+    localStorage.removeItem('timezone');
+    select.value = '00';
+}
+saveBtn.addEventListener('click', () => {
+    saveInfo();
+    if (checkbox.checked === false && saveBtn.checked === false && timezone.value === 'default') {
+      return null
+    } else {
+      alert("Your settings are saved!")
+    }
 });
-
-settings.addEventListener("reset", (e) =>{
-    alert("Your settings are cancelled!");
+cancelBtn.addEventListener('click', () => {
+    removeInfo();
+    cancelBtn.style.backgroundColor = "#37474F";
+    if (checkbox.checked === false && saveBtn.checked === false && timezone.value === 'default') {
+      return null
+    } else {
+      alert("Oops...Your settings are cancelled!")
+    }
 });
+ loadInfo();

@@ -1,6 +1,5 @@
 
- /* -- variables ------------------------------ */
-        
+ /* color and font size variables */      
 :root {
     --color-main: rgba(116, 116, 233, 0.97);
     --color-second: rgba(69, 69, 129, 0.97);
@@ -21,7 +20,7 @@
     padding: 0;   
   }
 
-  /* -- Grid Container ------------------------------ */
+   /* Grid Container */
 .grid-container{
     display: grid;
     grid-template-columns: 100%;
@@ -32,15 +31,15 @@
                  "main"
   }
 
-header{
+header {
     grid-area: header;
 }
 
-nav{
+nav {
     grid-area: nav;
 }
 
-main{
+main {
     grid-area: main;
     grid-template-columns: 100%;
 }
@@ -595,7 +594,6 @@ select{
   
 @media screen and (min-width: 1024px){
 
-
     .membersActivities-container,
     .message-settings{
         display: grid;
@@ -605,12 +603,12 @@ select{
         grid-column: 1/2;
         border-right:var(--color-border) 2px solid; 
     }
-    
+   
     .members-activity, 
     .settings {
         grid-column: 2/3;
 
-    }
+    } 
     
     .switch-container {
         padding: 20px 0;;

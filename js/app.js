@@ -375,4 +375,4 @@ cancelBtn.addEventListener('click', () => {
       alert("Oops...Your settings are cancelled!")
     }
 });
- loadInfo();
+// loadInfo();
